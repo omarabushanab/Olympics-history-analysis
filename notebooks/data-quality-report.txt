@@ -1,0 +1,81 @@
+number of rows: 271,116 
+ 
+columns with missing values 
+ 
+       missing count missing percentage
+Age            9,474              3.49%
+Height        60,171             22.19%
+Weight        62,875             23.19%
+Medal        231,333             85.33%
+region           370              0.14%
+notes        266,077             98.14%
+
+missing regions have NOCs of:
+NOC
+SGP    349 
+ROT     12
+TUV      7
+UNK      2
+
+SGP is singapore's newest NOC. changed 10 years ago. before that it was SIN.
+SIN is what's used in noc_regions instead of SGP. solution is to use newest naming
+SIN -> SGP in noc_regions
+
+region         21.00              0.01%
+
+using the notes for the values of NA in region refugee olympic team, tuvalu, unknown
+missing regions have NOCs of:
+ROT    12 -> 0 
+TUV     7 -> 0
+UNK     2 -> 0
+
+Duplictes
+
+Duplicated rows count: 1385 
+Duplicated rows percentage: 0.51% 
+
+Duplicate rows are valid data as some sports/events allowed for the same participant
+to participate in the same event multiple times ex: in Art competitions, artists
+can submit multiple paintings in the same event.
+
+--- Year ---
+Year
+1932    692
+1928    467
+1936    377
+1924    175
+1948    146
+1900     76
+1908     64
+Name: count, dtype: int64
+
+--- Season ---
+Season
+Summer    1997
+Name: count, dtype: int64
+
+--- Sport ---
+Sport
+Art Competitions    1857
+Sailing               74
+Cycling               64
+Equestrianism          2
+Name: count, dtype: int64
+
+
+All duplicates were in Summer olympics between Year 1900 and 1948
+Sports that contained duplicates were art competitions, sailing, cycling, Equestrianism.
+Art competitions: allowed multiple painting submission from a single athlete
+sailing, cycling: multiple races in a single event. without race number, they seem identical.
+Equestrianism: same participant rode multiple horses in the same event.
+
+Inconsistencies:
+no inconsistent data found:
+what we checked for:
+for the same ID, no different name, sex, weight or height with the exception of NOC
+which is consistent with the geopolitical shifts. ex: soviet union disbandment.
+
+Games column is consistent with Year and Season
+
+No men participated in women's competitions and vice versa
+
