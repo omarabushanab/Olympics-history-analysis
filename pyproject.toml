@@ -1,6 +1,10 @@
 [project]
 name = "olympics-history-analysis"
 version = "0.1.0"
+description = "Olympic Games historical data analysis and visualization"
+authors = [
+    { name = "omarabushanab" }
+]
 requires-python = ">=3.12"
 dependencies = [
     "matplotlib>=3.11.2",
